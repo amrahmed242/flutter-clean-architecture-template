@@ -16,7 +16,7 @@ class PrefKeys {
 class Preference {
   static SharedPreferences? sb;
   static Future<void> init() async {
-    sb ??= await SharedPreferences.getInstance();
+    sb = await SharedPreferences.getInstance();
   }
 
   static String? getString(String key) {

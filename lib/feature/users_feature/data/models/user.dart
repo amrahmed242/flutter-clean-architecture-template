@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class Person extends Equatable {
-  const Person(this.name, this.nickname);
+class User extends Equatable {
+  const User(this.name, this.nickname);
 
   final String name;
   final String nickname;
@@ -13,7 +13,7 @@ class Person extends Equatable {
   @override
   bool get stringify => true;
 
-  factory Person.fromJson(Map<String, dynamic> json) {
-    return Person(json['name'], json['nickname']);
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(json['name'], json['nickname']);
   }
 }
