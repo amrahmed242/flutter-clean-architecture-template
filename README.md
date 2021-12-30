@@ -8,6 +8,7 @@ A time saving template to demonstrate MVVM Clean Architecture with basic project
 - [ ] Multiple App flavors (LOCAL-STATGING-PRODUCTION)for testing [links](https://petalite-browser-25b.notion.site/Multiple-App-Flavors-42cb9610784844ff880385afa6dde4e9).
 - [x] Common components like buttons, text inputs, etc
 - [x] Routing and navigation layer.
+- [x] use functional programming for propper error handling [article](https://resocoder.com/2019/12/14/functional-error-handling-in-flutter-dart-2-either-task-fp/).
 - [ ] Data presistance layer through [Hive DB](https://petalite-browser-25b.notion.site/Local-Data-Persistence-ea7ee06d9ca141bd80d54e142a0f5875).
 - [ ] Widget shourtcuts and shimmer effects [links](https://petalite-browser-25b.notion.site/Extensions-ab305b18c8a64d91942566de0353f5c5).
 - [ ] CI/CD via Github actions or codemagic.
