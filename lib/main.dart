@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_clean_architecture/core/constants/app_flavors.dart';
-import 'package:flutter_mvvm_clean_architecture/core/services/preference/preference.dart';
+import 'package:flutter_mvvm_clean_architecture/feature/users_feature/views/users_page/users_page.dart';
 import 'package:flutter_mvvm_clean_architecture/ui/routes/routes.dart';
 import 'package:flutter_mvvm_clean_architecture/ui/styles/app_theme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -24,8 +24,21 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.mainTheme,
         routes: Routes.getAppRoutes(),
         debugShowCheckedModeBanner: false,
-        initialRoute: '',
+        initialRoute: UsersPage.routeName,
         // initialRoute: SplashScreen.routeName,
+      ),
+    );
+  }
+}
+
+class Myidget extends StatelessWidget {
+  const Myidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation(Colors.blueAccent),
       ),
     );
   }
@@ -34,7 +47,7 @@ class MyApp extends StatelessWidget {
 Future<void> initServices() async {
   //detect current flavor the app is running on
   const String flavor = String.fromEnvironment('FLAVOR', defaultValue: AppFlavor.STAGING);
-
-  //1️⃣🔵🍉🌟🤏initialize shared preference service.
-  await Preference.init();
+  debugPrint(flavor);
+  //1️⃣initialize shared preference service.
+  // await Preference.init();
 }
