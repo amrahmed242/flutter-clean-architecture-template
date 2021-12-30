@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.mainTheme,
         routes: Routes.getAppRoutes(),
         debugShowCheckedModeBanner: false,
-        initialRoute: UsersScreen.routeName,
+        initialRoute: UsersPage.routeName,
         // initialRoute: SplashScreen.routeName,
       ),
     );

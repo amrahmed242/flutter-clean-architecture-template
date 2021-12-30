@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+import 'package:flutter_mvvm_clean_architecture/core/utils/faliure.dart';
 import 'package:flutter_mvvm_clean_architecture/feature/users_feature/data/models/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -17,7 +19,8 @@ abstract class UsersState with _$UsersState {
   const factory UsersState.loading() = _UsersStateLoading;
 
   ///Data
-  const factory UsersState.data({required List<User> users}) = _UsersStateData;
+  const factory UsersState.data({required Either<Failure, List<User>> users}) =
+      _UsersStateData;
 
   ///Error
   const factory UsersState.error([String? error]) = _UsersStateError;

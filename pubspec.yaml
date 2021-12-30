@@ -48,6 +48,7 @@ dependencies:
   graphql: ^5.0.0
   shared_preferences: ^2.0.11
   date_format: ^2.0.4
+  dartz: ^0.10.1
   url_launcher: ^6.0.17
   equatable: ^2.0.3
   mime: ^1.0.1

@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm_clean_architecture/feature/users_feature/domain/page_models/users_page_model/users_page_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class UsersErrorWidget extends StatelessWidget {
-  final WidgetRef? ref;
-  final dynamic provider;
-  const UsersErrorWidget({Key? key, this.ref, this.provider}) : super(key: key);
+class UsersErrorWidget extends ConsumerWidget {
+  const UsersErrorWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text("Error occured"),
-        if (ref != null && provider != null)
-          TextButton(
-            child: const Text('try again'),
-            onPressed: () => ref?.refresh(provider),
+        ElevatedButton(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              Icon(Icons.refresh),
+              Text('reload page'),
+            ],
           ),
+          onPressed: () => ref.refresh(usersPageModel),
+        ),
       ],
     );
   }

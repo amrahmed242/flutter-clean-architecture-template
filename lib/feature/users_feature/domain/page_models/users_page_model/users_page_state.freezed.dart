@@ -24,7 +24,7 @@ class _$UsersStateTearOff {
     return const _UsersStateLoading();
   }
 
-  _UsersStateData data({required List<User> users}) {
+  _UsersStateData data({required Either<Failure, List<User>> users}) {
     return _UsersStateData(
       users: users,
     );
@@ -46,7 +46,7 @@ mixin _$UsersState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> users) data,
+    required TResult Function(Either<Failure, List<User>> users) data,
     required TResult Function(String? error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ mixin _$UsersState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> users)? data,
+    TResult Function(Either<Failure, List<User>> users)? data,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) =>
@@ -135,7 +135,7 @@ class _$_UsersStateInitial implements _UsersStateInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> users) data,
+    required TResult Function(Either<Failure, List<User>> users) data,
     required TResult Function(String? error) error,
   }) {
     return initial();
@@ -146,7 +146,7 @@ class _$_UsersStateInitial implements _UsersStateInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> users)? data,
+    TResult Function(Either<Failure, List<User>> users)? data,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -228,7 +228,7 @@ class _$_UsersStateLoading implements _UsersStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> users) data,
+    required TResult Function(Either<Failure, List<User>> users) data,
     required TResult Function(String? error) error,
   }) {
     return loading();
@@ -239,7 +239,7 @@ class _$_UsersStateLoading implements _UsersStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> users)? data,
+    TResult Function(Either<Failure, List<User>> users)? data,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -285,7 +285,7 @@ abstract class _$UsersStateDataCopyWith<$Res> {
   factory _$UsersStateDataCopyWith(
           _UsersStateData value, $Res Function(_UsersStateData) then) =
       __$UsersStateDataCopyWithImpl<$Res>;
-  $Res call({List<User> users});
+  $Res call({Either<Failure, List<User>> users});
 }
 
 /// @nodoc
@@ -306,7 +306,7 @@ class __$UsersStateDataCopyWithImpl<$Res> extends _$UsersStateCopyWithImpl<$Res>
       users: users == freezed
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+              as Either<Failure, List<User>>,
     ));
   }
 }
@@ -316,7 +316,7 @@ class _$_UsersStateData implements _UsersStateData {
   const _$_UsersStateData({required this.users});
 
   @override
-  final List<User> users;
+  final Either<Failure, List<User>> users;
 
   @override
   String toString() {
@@ -345,7 +345,7 @@ class _$_UsersStateData implements _UsersStateData {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> users) data,
+    required TResult Function(Either<Failure, List<User>> users) data,
     required TResult Function(String? error) error,
   }) {
     return data(users);
@@ -356,7 +356,7 @@ class _$_UsersStateData implements _UsersStateData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> users)? data,
+    TResult Function(Either<Failure, List<User>> users)? data,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -394,10 +394,10 @@ class _$_UsersStateData implements _UsersStateData {
 }
 
 abstract class _UsersStateData implements UsersState {
-  const factory _UsersStateData({required List<User> users}) =
+  const factory _UsersStateData({required Either<Failure, List<User>> users}) =
       _$_UsersStateData;
 
-  List<User> get users => throw _privateConstructorUsedError;
+  Either<Failure, List<User>> get users => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$UsersStateDataCopyWith<_UsersStateData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -469,7 +469,7 @@ class _$_UsersStateError implements _UsersStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> users) data,
+    required TResult Function(Either<Failure, List<User>> users) data,
     required TResult Function(String? error) error,
   }) {
     return error(this.error);
@@ -480,7 +480,7 @@ class _$_UsersStateError implements _UsersStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> users)? data,
+    TResult Function(Either<Failure, List<User>> users)? data,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {

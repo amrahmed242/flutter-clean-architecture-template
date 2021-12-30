@@ -13,9 +13,9 @@ class UI {
   }
 
   ///wrapper that control the navigation process in more abstract way
-  static showInSnackBar(BuildContext context, msg,
-      {Color color = Colors.green, bool long = false}) {
-    ScaffoldMessenger.of(context).showSnackBar(
+  static showInSnackBar(BuildContext? context, msg,
+      {Color? color = Colors.green, bool long = false}) {
+    ScaffoldMessenger.of(context!).showSnackBar(
       SnackBar(
         duration: Duration(milliseconds: long ? 2500 : 1400),
         backgroundColor: color,
