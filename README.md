@@ -30,35 +30,6 @@ A time saving template to demonstrate MVVM Clean Architecture with basic project
 - [ ] Widget testing for UI layer.
 
 
-Below is the project structure to get started:
-
-### 📁 Folders
-- **assets**
-- **config**
-- **lib**
--  **core**
--    **constants**
--    **extensions**
--    **services**
--    **utils**
-
--  **feature**
--    **data**
--     **models**
--    **domain**
--     **page_models**
--    **presentaion**
--     **x_page**
--      **components**
-
--  **ui**
--    **dialogs**
--    **routes**
--    **styles**
--    **widgets**
-
-
-
 ### 📦 Packages
 - `shared_preferences: ^2.0.7`
 - `cupertino_icons: ^1.0.2`
