@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'app_colors.dart';
 
-final defaultDecoration = BoxDecoration(
+const defaultDecoration = BoxDecoration(
   color: AppColors.secondaryColor,
-  borderRadius: const BorderRadius.all(Radius.circular(10)),
+  borderRadius: BorderRadius.all(Radius.circular(10)),
 );

@@ -10,6 +10,7 @@ class UsersPage extends ConsumerWidget {
   static const String routeName = 'UsersPage';
   static final GlobalKey<ScaffoldState> usersPageKey = GlobalKey<ScaffoldState>();
   const UsersPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(usersPageModel);

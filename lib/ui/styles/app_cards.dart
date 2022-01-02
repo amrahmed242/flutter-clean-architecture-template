@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class AppCards {
   static card({required Widget widget}) {
-    return AppCard(widget: widget);
+    return _AppCard(widget: widget);
   }
 }
 
-class AppCard extends StatelessWidget {
+class _AppCard extends StatelessWidget {
   final Widget widget;
   final Function? onPress;
   final Color? color;
   final double? height;
   final double? width;
-  const AppCard(
+  const _AppCard(
       {Key? key,
       required this.widget,
       this.onPress,
@@ -30,7 +30,7 @@ class AppCard extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
-        // onTap: () => onPress != null ? onPress() : {},
+        onTap: () => onPress != null ? onPress!() : {},
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
           child: SizedBox(height: height, width: width, child: widget),

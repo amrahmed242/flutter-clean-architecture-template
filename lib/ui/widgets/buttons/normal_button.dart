@@ -57,7 +57,7 @@ class NormalButton extends StatelessWidget {
         child: Padding(
           padding: padding,
           child: busy
-              ? const LoadingIndicator(size: 19)
+              ? AppIndicators.loadingIndicator(size: 19)
               : child != null
                   ? child
                   : (suffixIcon != null || perfixIcon != null)

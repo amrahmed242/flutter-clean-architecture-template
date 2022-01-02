@@ -1,51 +1,52 @@
 import 'package:flutter/material.dart';
 
-//TODO wrap with new directory and seprate it into seperate files
 class AppIndicators {
-  static loadingIndicator() => LoadingIndicator();
-  static progressIndicator() => CustomProgressIndicator(progress: 0);
+  static _LoadingIndicator loadingIndicator({String? text, double? size}) =>
+      _LoadingIndicator(size: size, text: text);
+  static _ProgressIndicator progressIndicator({double? progress, double? height}) =>
+      _ProgressIndicator(progress: progress, height: height);
 }
 
-class LoadingIndicator extends StatelessWidget {
+class _LoadingIndicator extends StatelessWidget {
   final String? text;
   final double? size;
-  const LoadingIndicator({Key? key, this.text, this.size = 40})
-      : super(key: key);
+  const _LoadingIndicator({Key? key, this.text, this.size = 40}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: size,
-        height: size,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            const CircularProgressIndicator(),
-            if (text != null)
-              Text(
-                text ?? '',
-                style: const TextStyle(fontSize: 11, color: Colors.grey),
-                maxLines: 1,
-              ),
-          ],
-        ));
+    return SizedBox(
+      width: size,
+      height: size,
+      child: text != null
+          ? Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                const CircularProgressIndicator(),
+                Text(
+                  text ?? '',
+                  style: const TextStyle(fontSize: 11, color: Colors.grey),
+                  maxLines: 1,
+                ),
+              ],
+            )
+          : const CircularProgressIndicator(),
+    );
   }
 }
 
-class CustomProgressIndicator extends StatelessWidget {
-  final int progress;
-  final double height;
-  const CustomProgressIndicator(
-      {Key? key, this.height = 4, required this.progress})
+class _ProgressIndicator extends StatelessWidget {
+  final double? progress;
+  final double? height;
+  const _ProgressIndicator({Key? key, this.height = 4, this.progress = 0})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final paddingFactor = progress > 0 ? ((100 - progress) / 100) : 1;
+    final paddingFactor = (progress ?? 0) > 0 ? ((100 - (progress ?? 0)) / 100) : 1;
     return Container(
       height: height,
-      decoration: BoxDecoration(
-          color: Colors.blue, borderRadius: BorderRadius.circular(35)),
+      decoration:
+          BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(35)),
       margin: const EdgeInsets.symmetric(vertical: 5),
       width: double.infinity,
       child: LayoutBuilder(
@@ -57,8 +58,7 @@ class CustomProgressIndicator extends StatelessWidget {
               color: Colors.blue,
               borderRadius: BorderRadius.circular(35),
             ),
-            margin: EdgeInsetsDirectional.only(
-                end: constraints.maxWidth * paddingFactor),
+            margin: EdgeInsetsDirectional.only(end: constraints.maxWidth * paddingFactor),
           );
         },
       ),

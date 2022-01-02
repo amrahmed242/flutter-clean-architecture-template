@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
@@ -14,11 +13,11 @@ class AppTheme {
     displayColor: AppColors.primaryText,
   );
   static final mainTheme = ThemeData.dark().copyWith(
+    primaryTextTheme: textTheme,
+    canvasColor: AppColors.backgroundColor,
+    textTheme: GoogleFonts.poppinsTextTheme(textTheme),
     scaffoldBackgroundColor: AppColors.backgroundColor,
     iconTheme: const IconThemeData(color: Colors.grey),
     buttonTheme: ButtonThemeData(buttonColor: AppColors.accentColor.withOpacity(.9)),
-    primaryTextTheme: textTheme,
-    // textTheme: GoogleFonts.poppinsTextTheme(textTheme),
-    canvasColor: AppColors.backgroundColor,
   );
 }

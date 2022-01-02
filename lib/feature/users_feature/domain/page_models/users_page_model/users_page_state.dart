@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_mvvm_clean_architecture/core/utils/faliure.dart';
-import 'package:flutter_mvvm_clean_architecture/feature/users_feature/data/models/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../../../core/utils/faliure.dart';
+import '../../../data/models/user.dart';
 
 part 'users_page_state.freezed.dart';
 
