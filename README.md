@@ -2,7 +2,7 @@
 
 <h1 align="center" style="font-size: 52px;" ><img height=30 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flutter/flutter.png"> Flutter MVVM clean architecture Template </h1>
 
-A time saving template to demonstrate MVVM Clean Architecture with basic project structure using Restful apis, Graphql and Riverpod to get started rather than creating all the folders/files again and again.
+A time saving template to demonstrate MVVM Clean Architecture with basic project structure using Restful apis, Graphql and Riverpod to get started rather than creating all the folders/files with every new project.
 
 - [x] MVVM Design Pattern using [Riverpod](https://riverpod.dev/).
 - [ ] Multiple App flavors (LOCAL-STATGING-PRODUCTION)for testing [links](https://petalite-browser-25b.notion.site/Multiple-App-Flavors-42cb9610784844ff880385afa6dde4e9).
@@ -67,12 +67,9 @@ flutter run
 ### 🧑 Author
 
 #### Amr Ahmed
-[![LinkedIn Link]('https://shields.io/')](https://www.linkedin.com/in/amrahmed24/)
-
+[LinkedIn Link](https://www.linkedin.com/in/amrahmed24/)
 You can also follow my GitHub Profile to stay updated about my latest projects:
-
-[![GitHub Follow](https://shields.io/)](https://github.com/amrahmed242)
-
+[GitHub Follow](https://github.com/amrahmed242)
 If you liked the repo then kindly support it by giving it a star ⭐!
 
-Copyright (c) 2021 Amr Ahmed.
+Copyright (c) 2021 AmrAhmed.
