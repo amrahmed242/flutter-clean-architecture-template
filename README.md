@@ -4,6 +4,7 @@
 
 A time saving template to demonstrate MVVM Clean Architecture with basic project structure using Restful apis, Graphql and Riverpod to get started rather than creating all the folders/files with every new project.
 
+### 🧗🏼‍♂️ Milestones
 - [x] MVVM Design Pattern using [Riverpod](https://riverpod.dev/).
 - [ ] Multiple App flavors (LOCAL-STATGING-PRODUCTION)for testing [links](https://petalite-browser-25b.notion.site/Multiple-App-Flavors-42cb9610784844ff880385afa6dde4e9).
 - [x] Common components like buttons, text inputs, etc
