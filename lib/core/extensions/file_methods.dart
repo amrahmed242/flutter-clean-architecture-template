@@ -7,18 +7,20 @@ const supportedFileTypes = ['image', 'pdf'];
 
 extension FileMethods on File {
   /*
-  * return the currentfile type 
-  * throws state error if check valid iption is true 
+  * return the current file type 
+  * throws state error if check valid option is true 
   */
   String type({bool checkValid = false}) {
     final mimeStr = lookupMimeType(path) ?? '';
-    final fileFromat = mimeStr.split('/');
-    return fileFromat.firstWhere((o) => supportedFileTypes.contains(o),
-        orElse: !checkValid ? () => '' : null);
+    final fileFormat = mimeStr.split('/');
+    return fileFormat.firstWhere(
+      (o) => supportedFileTypes.contains(o),
+      orElse: !checkValid ? () => '' : null,
+    );
   }
 
   /*
-  * return the currentfile name  
+  * return the current file name  
   */
   String get name => basename(path);
 }

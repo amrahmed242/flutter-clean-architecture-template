@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 enum DeviceScreenType { desktop, mobile, tablet }
 
@@ -22,10 +22,12 @@ class ScreenUtil {
   static double? _bottomBarHeight;
   static double? _textScaleFactor;
 
-  static void init(BuildContext context,
-      {num width = defaultWidth,
-      num height = defaultHeight,
-      bool allowFontScaling = false}) {
+  static void init(
+    BuildContext context, {
+    num width = defaultWidth,
+    num height = defaultHeight,
+    bool allowFontScaling = false,
+  }) {
     uiWidthPx = width;
     uiHeightPx = height;
     allowFontScaling = allowFontScaling;
@@ -38,11 +40,11 @@ class ScreenUtil {
     _screenHeight = mediaQuery.size.height;
     _statusBarHeight = mediaQuery.padding.top;
     _bottomBarHeight = _mediaQueryData?.padding.bottom;
-    _textScaleFactor = mediaQuery.textScaleFactor;
+    _textScaleFactor = mediaQuery.textScaler.scale(1);
   }
 
   static DeviceScreenType? getDeviceType(MediaQueryData mediaQuery) {
-    // fixed width changes with oreintation
+    // fixed width changes with orientation
     final deviceWidth = mediaQuery.size.shortestSide;
 
     if (deviceWidth > 950) {
@@ -76,8 +78,7 @@ class ScreenUtil {
   /// The vertical extent of this size. px
   static double? get screenHeight => _screenHeight! * _pixelRatio!;
 
-  static bool? get portrait =>
-      _mediaQueryData?.orientation == Orientation.portrait;
+  static bool? get portrait => _mediaQueryData?.orientation == Orientation.portrait;
 
   /// The offset from the top
   static double? get statusBarHeight => _statusBarHeight;
@@ -91,8 +92,7 @@ class ScreenUtil {
 
   static double? get scaleHeight => _screenHeight! / uiHeightPx!;
 
-  static double? get scaleText =>
-      scaleWidth! > scaleHeight! ? scaleWidth : scaleHeight;
+  static double? get scaleText => scaleWidth! > scaleHeight! ? scaleWidth : scaleHeight;
 
   /// Adapted to the device width of the UI Design.
   /// Height can also be adapted according to this to ensure no deformation ,

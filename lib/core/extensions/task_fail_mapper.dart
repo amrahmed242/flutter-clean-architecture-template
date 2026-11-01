@@ -1,16 +1,11 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter_mvvm_clean_architecture/core/utils/faliure.dart';
+import 'package:flutter_mvvm_clean_architecture/core/error/failure.dart';
+import 'package:fpdart/fpdart.dart';
 
-extension TaskX<T extends Either<Object, U>, U> on Task<T> {
-  Task<Either<Failure, U>> mapFailure() {
-    return map(
-      (either) => either.leftMap((obj) {
-        try {
-          return obj as Failure;
-        } catch (e) {
-          throw obj;
-        }
-      }),
-    );
-  }
+extension TaskEitherX<T> on Future<T> Function() {
+  ///wraps an async call into a lazy [TaskEither], any thrown error is mapped
+  ///into a [Failure] so callers only deal with `Either<Failure, T>`.
+  TaskEither<Failure, T> toTaskEither() => TaskEither.tryCatch(
+    this,
+    (error, _) => error is Failure ? error : Failure(message: error.toString()),
+  );
 }
