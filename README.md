@@ -111,7 +111,12 @@ test/                       mirrors lib/
 Page controllers read services directly from `domain/services`, so there's no use-case layer to write.
 Repos and services are concrete classes with a `Provider`; tests fake them with `overrideWithValue` (see `test/features/users/`), so no interfaces are needed.
 
-**Rule of thumb:** put repos and services in the general `domain/` folders by default. Give a feature its own `repos/` or `services/` only when that code is truly private to it.
+**Where does a file go?** Ask whether it would make sense, unchanged, in a completely different app.
+- Yes → `core/`
+- No, and several features use it → `domain/`
+- No, and only one feature uses it → that feature's folder
+
+Dependencies only go one way: `features → domain → core`, never back.
 
 ### 🧩 State example (no codegen)
 ```dart
